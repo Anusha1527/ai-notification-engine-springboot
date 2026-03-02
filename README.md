@@ -1,6 +1,5 @@
 # AI Notification Prioritization Engine — Spring Boot
 
-```md
 ![Java](https://img.shields.io/badge/Java-17+-orange)
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-3.x-green)
 ![MongoDB](https://img.shields.io/badge/Database-MongoDB-blue)

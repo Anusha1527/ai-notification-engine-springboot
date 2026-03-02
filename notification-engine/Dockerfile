@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy project files
 COPY . .
 
+# ✅ Give permission to mvnw
+RUN chmod +x mvnw
+
 # Build application
 RUN ./mvnw clean package -DskipTests
 
@@ -14,4 +17,4 @@ RUN ./mvnw clean package -DskipTests
 EXPOSE 8080
 
 # Run Spring Boot app
-CMD ["java", "-jar", "target/*.jar"]
+CMD ["sh", "-c", "java -jar target/*.jar"]

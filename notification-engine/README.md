@@ -1,31 +1,15 @@
 # AI Notification Prioritization Engine — Spring Boot
 
-This project is a production-ready AI-powered Notification Prioritization Engine developed for the **Cyepro Solutions AI/ML Engineer Build & Ship Test**.
+```md
+![Java](https://img.shields.io/badge/Java-17+-orange)
+![Spring Boot](https://img.shields.io/badge/SpringBoot-3.x-green)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-blue)
+![AI](https://img.shields.io/badge/AI-Groq%20LLM-purple)
+![Deployment](https://img.shields.io/badge/Cloud-Ready-success)
 
-The system analyzes incoming notifications using a real AI model and assigns priority levels with a fail-safe architecture.
+This project is a production-ready AI-powered Notification Prioritization Engine designed to intelligently classify and manage incoming notifications using Large Language Models (LLMs).
 
----
-
-## 🚀 Features
-
-- Spring Boot REST API
-- MongoDB database integration
-- Real AI classification using Groq LLM
-- Automatic fallback mechanism
-- Swagger API documentation
-- Production-safe error handling
-
----
-
-## 🧠 How It Works
-
-1. Client sends notification
-2. Backend calls AI model
-3. AI classifies priority
-4. Result stored in MongoDB
-5. Response returned instantly
-
-If AI fails → fallback decision ensures reliability.
+The system analyzes notification content in real time and assigns priority levels through an AI-driven decision engine supported by a fail-safe architecture to ensure reliability and continuous operation.
 
 ---
 
@@ -47,17 +31,6 @@ flowchart LR
     style F fill:#ffefe0
     style G fill:#e0f7ff
 ```
----
-
-## 🛠 Tech Stack
-
-- Java 17+
-- Spring Boot
-- MongoDB
-- WebClient
-- Groq AI API
-- Maven
-
 ---
 ## 🏗 High-Level Architecture
 
@@ -82,38 +55,6 @@ flowchart LR
     style API fill:#e8ffe8
 ```
 ---
-
-✅ Shows full backend pipeline instantly.
-
----
-
-## 📡 API Endpoints
-
-### Health Check
-GET `/health`
-
-### Process Notification
-POST `/api/notifications/process`
-
-Example:
-
-```json
-{
-  "userId": "101",
-  "message": "Server outage detected",
-  "context": "production"
-}
-```
-## 🔐 Fail-Safe Design
-
-AI timeout protection
-
-JSON validation
-
-Exception-safe parsing
-
-Guaranteed API response
-
 # ✅ 2️⃣ REQUEST PROCESSING FLOW
 
 ```md
@@ -142,7 +83,6 @@ flowchart TD
 ✅ Directly proves **fail-safe logic requirement**.
 
 ---
-
 # ✅ 3️⃣ AI INTEGRATION ARCHITECTURE
 
 ```md
@@ -161,10 +101,8 @@ sequenceDiagram
     AIService-->>API: decision + reason
 ```
 > ✅ Shows real AI integration (important requirement).
-
 ---
-
-# ✅ 4️⃣ FAIL-SAFE ARCHITECTURE (VERY IMPORTANT FOR EVALUATION)
+# ✅ 4️⃣ FAIL-SAFE ARCHITECTURE
 
 ```md
 ## 🛡 Fail-Safe Decision Architecture
@@ -188,6 +126,115 @@ flowchart LR
     style Fallback fill:#ffd6d6
 ```
 > ✅ "Complete fail-safe architecture with fallback mechanisms"
+---
+## 🔐 Fail-Safe Design
+
+The system guarantees availability using:
+
+AI timeout protection
+
+JSON validation layer
+
+Exception-safe parsing
+
+Automatic fallback decision engine
+
+Always-return response strategy
+
+---
+
+## 🚀 Features
+
+- Spring Boot REST API
+- MongoDB database integration
+- Real AI classification using Groq LLM
+- Automatic fallback mechanism
+- Swagger API documentation
+- Production-safe error handling
+
+---
+## 🛠 Tech Stack
+
+- Java 17+
+- Spring Boot
+- MongoDB
+- WebClient
+- Groq AI API
+- Maven
+
+---
+
+## 🧠 How It Works
+
+1. Client sends notification
+2. Backend calls AI model
+3. AI classifies priority
+4. Result stored in MongoDB
+5. Response returned instantly
+
+If AI fails → fallback decision ensures reliability.
+
+---
+
+✅ Shows full backend pipeline instantly.
+
+---
+
+## 📡 API Endpoints
+
+### Health Check
+GET `/health`
+
+### Process Notification
+POST `/api/notifications/process`
+
+Example:
+
+```json
+{
+  "userId": "101",
+  "message": "Server outage detected",
+  "context": "production"
+}
+```
+---
+## ⚙️ Setup Guide (Local Run)
+1️⃣ Clone Repository
+```
+git clone https://github.com/your-username/notification-engine-springboot.git
+cd notification-engine-springboot
+```
+2️⃣ Configure Environment
+Update application.properties:
+```
+groq.api.url=https://api.groq.com/openai/v1/chat/completions
+groq.api.key=YOUR_API_KEY
+```
+3️⃣ Run Application
+```
+mvn spring-boot:run
+```
+Server starts at:
+
+http://localhost:8080
+
+Swagger UI:
+
+http://localhost:8080/swagger-ui.html
+
+
+---
+
+# ☁ Deployment
+
+The application is designed to be cloud-deployable with environment-based configuration and production-safe startup settings.
+
+## 🌐 Live Architecture
+
+- Backend deployed as a cloud web service
+- MongoDB hosted using MongoDB Atlas
+- AI classification powered by Groq LLM API
+- Environment variables used for secure configuration
 
 # ✅ 5️⃣ DEPLOYMENT ARCHITECTURE
 
@@ -208,4 +255,40 @@ flowchart LR
 
     style Render fill:#e8ffe8
     style Groq fill:#ffe6e6
+```
+---
+## 📦 Deployment Design Principles
+    Stateless backend architecture
+    Externalized configuration
+    Fail-safe AI integration
+    Cloud-ready build process
+    Zero hardcoded secrets
+---
+
+## 🚀 Backend Deployment
+
+The Spring Boot application can be deployed on platforms such as:
+
+- Render
+- Railway
+- AWS
+- Docker-based cloud environments
+
+> Here I used Render
+---
+### Build Command
+
+```bash
+./mvnw clean package
+```
+Start Command
+```
+java -jar target/*.jar
+```
+---
+## Environment Variables
+The following must be configured in the deployment platform:
+```
+groq.api.url=http://api.groq.com/openai/v1/chat/completions
+groq.api.key=YOUR_API_KEY
 ```

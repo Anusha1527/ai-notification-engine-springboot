@@ -56,9 +56,6 @@ flowchart LR
 ---
 # ✅ 2️⃣ REQUEST PROCESSING FLOW
 
-```md
-## 🔄 Request Processing Flow
-
 ```mermaid
 flowchart TD
 
@@ -79,13 +76,11 @@ flowchart TD
     style E fill:#fff3cd
     style G fill:#ffd6d6
 ```
+
 ✅ Directly proves **fail-safe logic requirement**.
 
 ---
 # ✅ 3️⃣ AI INTEGRATION ARCHITECTURE
-
-```md
-## 🤖 AI Integration Architecture
 
 ```mermaid
 sequenceDiagram
@@ -102,9 +97,6 @@ sequenceDiagram
 > ✅ Shows real AI integration (important requirement).
 ---
 # ✅ 4️⃣ FAIL-SAFE ARCHITECTURE
-
-```md
-## 🛡 Fail-Safe Decision Architecture
 
 ```mermaid
 flowchart LR
@@ -237,9 +229,6 @@ The application is designed to be cloud-deployable with environment-based config
 
 # ✅ 5️⃣ DEPLOYMENT ARCHITECTURE
 
-```md
-## ☁ Deployment Architecture
-
 ```mermaid
 flowchart LR
 
@@ -257,11 +246,11 @@ flowchart LR
 ```
 ---
 ## 📦 Deployment Design Principles
-    Stateless backend architecture
-    Externalized configuration
-    Fail-safe AI integration
-    Cloud-ready build process
-    Zero hardcoded secrets
+Stateless backend architecture
+Externalized configuration
+Fail-safe AI integration
+Cloud-ready build process
+Zero hardcoded secrets
 ---
 
 ## 🚀 Backend Deployment
